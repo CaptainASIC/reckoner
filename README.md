@@ -27,6 +27,10 @@
   <a href="https://reckoner.captainasic.dev">Live Demo</a> · <a href="#quick-start">Quick Start</a> · <a href="#provider-support">Providers</a> · <a href="#adding-a-new-provider">Add Your Own</a>
 </p>
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="Reckoner Dashboard" width="900" />
+</p>
+
 ## Features
 
 - **Single dashboard** — all your AI and cloud provider balances at a glance

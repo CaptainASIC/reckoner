@@ -13,6 +13,12 @@
 </p>
 
 <p align="center">
+  <strong>Looking for the iPhone or iPad app?</strong><br />
+  Reckoner for iOS is a <em>separate</em> native app with its own codebase —
+  <a href="https://apps.apple.com/app/id6760984949">get it on the App Store</a>.
+</p>
+
+<p align="center">
   <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3" /></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python 3.11+" /></a>
   <a href="https://react.dev/"><img src="https://img.shields.io/badge/react-19-blue.svg" alt="React 19" /></a>
@@ -24,12 +30,40 @@
 </p>
 
 <p align="center">
-  <a href="https://reckoner.captainasic.dev">Live Demo</a> · <a href="#quick-start">Quick Start</a> · <a href="#provider-support">Providers</a> · <a href="#adding-a-new-provider">Add Your Own</a>
+  <a href="https://reckoner.captainasic.dev">Live Demo</a> · <a href="https://apps.apple.com/app/id6760984949">iOS App</a> · <a href="#quick-start">Quick Start</a> · <a href="#provider-support">Providers</a> · <a href="#adding-a-new-provider">Add Your Own</a>
 </p>
 
 <p align="center">
   <img src="docs/screenshot.png" alt="Reckoner Dashboard" width="900" />
 </p>
+
+## Featured In
+
+Reckoner has been covered by [The Next New Thing](https://www.youtube.com/@TheNextNewThingAI).
+Both are repo roundups — the links below jump straight to the Reckoner segment.
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://www.youtube.com/watch?v=1fHsIveXRa8&t=1531s">
+        <img src="https://i.ytimg.com/vi/1fHsIveXRa8/hqdefault.jpg" alt="Top Repos Explained: Code Review, World Camera, Better AI Builds, etc." width="400" />
+      </a>
+      <br />
+      <a href="https://www.youtube.com/watch?v=1fHsIveXRa8&t=1531s"><strong>Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.</strong></a>
+      <br />
+      <sub>The Next New Thing · from 25:31</sub>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://www.youtube.com/watch?v=aX8Y183qDpY&t=1168s">
+        <img src="https://i.ytimg.com/vi/aX8Y183qDpY/hqdefault.jpg" alt="Top 10 Repos explained: ADHD, Ponytail, and more" width="400" />
+      </a>
+      <br />
+      <a href="https://www.youtube.com/watch?v=aX8Y183qDpY&t=1168s"><strong>Top 10 Repos explained: ADHD, Ponytail, and more</strong></a>
+      <br />
+      <sub>The Next New Thing · from 19:28</sub>
+    </td>
+  </tr>
+</table>
 
 ## Features
 
@@ -40,6 +74,30 @@
 - **Password auth** — optional single-user password gate to protect settings and/or the full dashboard
 - **Railway-ready** — two-service deploy (frontend + backend) with `uv` and Railpack
 - **Docker support** — multi-stage Dockerfile included
+
+> This repository is the **self-hosted web app**. The iOS app is a separate product — see below.
+
+## iOS App
+
+**Reckoner for iOS is a separate app with its own codebase.** It is not built from this
+repository, is not required to run this one, and does not connect to this backend.
+
+<p>
+  <a href="https://apps.apple.com/app/id6760984949"><img src="https://img.shields.io/badge/App%20Store-Download-0D96F6?logo=apple&logoColor=white" alt="Download Reckoner on the App Store" /></a>
+</p>
+
+|  | This repo (web) | Reckoner for iOS |
+|---|---|---|
+| **Source** | [CaptainASIC/reckoner](https://github.com/CaptainASIC/reckoner) | [CaptainASIC/reckoner-ios](https://github.com/CaptainASIC/reckoner-ios) |
+| **Stack** | React 19 + FastAPI | SwiftUI, iOS 17+ |
+| **Where API calls run** | Your self-hosted backend | Entirely on-device |
+| **Credential storage** | SQLite on your server | iOS Keychain, FaceID/TouchID gated |
+| **Install** | Self-host — Railway, Docker, or local | [App Store](https://apps.apple.com/app/id6760984949) |
+
+Features exclusive to the iOS app: background refresh while closed, configurable
+low-balance alerts, offline cache with a stale indicator, and universal iPhone/iPad layout.
+
+Full details in the [reckoner-ios README](https://github.com/CaptainASIC/reckoner-ios).
 
 ## Provider Support
 
@@ -55,6 +113,7 @@
 | **Gemini** | AI | API Key | Key validity only (no balance endpoint) |
 || **Plaud** | AI/Tools | JWT Bearer Token | Recording stats (files, hours, transcription) |
 || **CivitAI** | AI | Session Cookie | Buzz credit balance |
+|| **Perplexity** | AI | Session Cookie | Credit balance + spend |
 | **Railway** | Cloud | Account API Token | Credit balance + current billing period spend |
 | **Vercel** | Cloud | Personal Access Token | Account details |
 | **Neon DB** | Cloud | API Key | Monthly compute consumption |
@@ -174,6 +233,12 @@ Click the ⚙️ icon on any provider card to configure credentials directly in 
 3. Copy the full Cookie header string (at minimum the `__Secure-civitai-token` cookie)
 4. Set `CIVITAI_SESSION_COOKIE`
 
+### Perplexity
+1. Log in to [console.perplexity.ai](https://console.perplexity.ai)
+2. Open DevTools (F12) → Application → Cookies
+3. Copy the full Cookie header string for `console.perplexity.ai`
+4. Set `PERPLEXITY_SESSION_COOKIE`
+
 ### Railway
 1. Go to [railway.app/account/tokens]
 2. Create a new token — **select "No workspace"** to create an Account token
@@ -239,6 +304,7 @@ reckoner/
 │       ├── plaud.py
 │       ├── gemini.py
 │       ├── civitai.py
+│       ├── perplexity.py
 │       ├── railway.py
 │       ├── vercel.py
 │       ├── neon.py

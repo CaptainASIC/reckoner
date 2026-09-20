@@ -332,6 +332,34 @@ Interactive docs available at `/docs` (FastAPI Swagger UI).
 3. Register in `backend/providers/__init__.py`
 4. That's it — the dashboard picks it up automatically
 
+## Featured In
+
+Reckoner has been covered by [The Next New Thing](https://www.youtube.com/@TheNextNewThingAI).
+Both are repo roundups — the links below jump straight to the Reckoner segment.
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://www.youtube.com/watch?v=1fHsIveXRa8&t=1531s">
+        <img src="https://i.ytimg.com/vi/1fHsIveXRa8/hqdefault.jpg" alt="Top Repos Explained: Code Review, World Camera, Better AI Builds, etc." width="400" />
+      </a>
+      <br />
+      <a href="https://www.youtube.com/watch?v=1fHsIveXRa8&t=1531s"><strong>Top Repos Explained: Code Review, World Camera, Better AI Builds, etc.</strong></a>
+      <br />
+      <sub>The Next New Thing · from 25:31</sub>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://www.youtube.com/watch?v=aX8Y183qDpY&t=1168s">
+        <img src="https://i.ytimg.com/vi/aX8Y183qDpY/hqdefault.jpg" alt="Top 10 Repos explained: ADHD, Ponytail, and more" width="400" />
+      </a>
+      <br />
+      <a href="https://www.youtube.com/watch?v=aX8Y183qDpY&t=1168s"><strong>Top 10 Repos explained: ADHD, Ponytail, and more</strong></a>
+      <br />
+      <sub>The Next New Thing · from 19:28</sub>
+    </td>
+  </tr>
+</table>
+
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE).

@@ -88,7 +88,7 @@ repository, is not required to run this one, and does not connect to this backen
 
 |  | This repo (web) | Reckoner for iOS |
 |---|---|---|
-| **Source** | [CaptainASIC/reckoner](https://github.com/CaptainASIC/reckoner) | [CaptainASIC/reckoner-ios](https://github.com/CaptainASIC/reckoner-ios) |
+| **Source** | Open source, [GPLv3](LICENSE) | Closed source |
 | **Stack** | React 19 + FastAPI | SwiftUI, iOS 17+ |
 | **Where API calls run** | Your self-hosted backend | Entirely on-device |
 | **Credential storage** | SQLite on your server | iOS Keychain, FaceID/TouchID gated |
@@ -97,7 +97,7 @@ repository, is not required to run this one, and does not connect to this backen
 Features exclusive to the iOS app: background refresh while closed, configurable
 low-balance alerts, offline cache with a stale indicator, and universal iPhone/iPad layout.
 
-Full details in the [reckoner-ios README](https://github.com/CaptainASIC/reckoner-ios).
+Distributed through the [App Store](https://apps.apple.com/app/id6760984949) only — there is no public source release.
 
 ## Provider Support
 
